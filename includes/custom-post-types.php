@@ -53,7 +53,7 @@ function pai_core_custom_post_type() {
    'description'           => __( 'Post Type for Reports', 'pai-core' ),
    'labels'                => $labels,
    'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
-   'taxonomies'            => array( 'category', 'series' ),
+   'taxonomies'            => array( 'category', 'post_tag', 'series' ),
    'hierarchical'          => true,
    'public'                => true,
    'show_ui'               => true,
