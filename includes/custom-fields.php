@@ -4,14 +4,14 @@
  *
  * @package    PAI_Core
  * @subpackage PAI_Core\Includes
- * @since      0.0.1
+ * @since      0.1.0
  * @license    GPL-2.0+
  */
 
 /**
  * Register Custom Fields
  *
- * @since 0.0.1
+ * @since 0.1.0
  *
  * @uses acf_add_local_field_group()
  *

@@ -4,14 +4,14 @@
  *
  * @package    PAI_Core
  * @subpackage PAI_Core\Includes
- * @since      0.0.1
+ * @since      0.1.0
  * @license    GPL-2.0+
  */
 
 /**
  * Remove query strings from static resources
  *
- * @since   0.0.1
+ * @since   0.1.0
  *
  * @uses    script_loader_src filter
  * @uses    style_loader_src filter
