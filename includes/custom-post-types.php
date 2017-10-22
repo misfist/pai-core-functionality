@@ -4,14 +4,14 @@
  *
  * @package    PAI_Core
  * @subpackage PAI_Core\Includes
- * @since      0.0.1
+ * @since      0.1.0
  * @license    GPL-2.0+
  */
 
 /**
  * Register Custom Post Type
  *
- * @since 0.0.1
+ * @since 0.1.0
  *
  * @uses register_post_type()
  *
@@ -52,7 +52,7 @@ function pai_core_custom_post_type() {
    'label'                 => __( 'Report', 'pai-core' ),
    'description'           => __( 'Post Type for Reports', 'pai-core' ),
    'labels'                => $labels,
-   'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', ),
+   'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
    'taxonomies'            => array( 'category', 'post_tag', 'series' ),
    'hierarchical'          => true,
    'public'                => true,
@@ -76,34 +76,47 @@ add_action( 'init', 'pai_core_custom_post_type', 99 );
 
 /**
  * Insert Category Terms
+ * Upon plugin activation, insert terms if they don't already exist
  *
- * @since 0.0.1
+ * @since 0.1.0
  *
  * @return void
  */
-wp_insert_term(
-  __( 'Press Release', 'pai-core' ),
-  'category',
-  array(
-    'description'=> __( 'Press release posts.', 'pai-core' ),
-    'slug' => 'press-release',
-  )
-);
 
-wp_insert_term(
-  __( 'Press Mention', 'pai-core' ),
-  'category',
-  array(
-    'description'=> __( 'Press mention posts.', 'pai-core' ),
-    'slug' => 'press-mention',
-  )
-);
+function pai_core_insert_terms() {
 
-wp_insert_term(
-  __( 'Job', 'pai-core' ),
-  'category',
-  array(
-    'description'=> __( 'Job posts.', 'pai-core' ),
-    'slug' => 'job',
-  )
-);
+  if( !term_exists( 'Press Release', 'category' ) ) {
+    wp_insert_term(
+      __( 'Press Release', 'pai-core' ),
+      'category',
+      array(
+        'description'=> __( 'Press release posts.', 'pai-core' ),
+        'slug' => 'press-release',
+      )
+    );
+  }
+
+  if( !term_exists( 'Press Mention', 'category' ) ) {
+    wp_insert_term(
+      __( 'Press Mention', 'pai-core' ),
+      'category',
+      array(
+        'description'=> __( 'Press mention posts.', 'pai-core' ),
+        'slug' => 'press-mention',
+      )
+    );
+  }
+
+  if( !term_exists( 'Job', 'category' ) ) {
+    wp_insert_term(
+      __( 'Job', 'pai-core' ),
+      'category',
+      array(
+        'description'=> __( 'Job posts.', 'pai-core' ),
+        'slug' => 'job',
+      )
+    );
+  }
+
+}
+add_action( 'pai_core_activate', 'pai_core_insert_terms' );
