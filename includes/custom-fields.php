@@ -641,6 +641,141 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
   	'description' => '',
   ));
 
+  /* Research Page Custom Fields */
+  acf_add_local_field_group( array(
+  	'key' => 'group_research_fields',
+  	'title' => __( 'Research', 'pai-core' ),
+  	'fields' => array (
+  		array (
+  			'key' => 'field_research_series_section',
+  			'label' => __( 'Research Series Section', 'pai-core' ),
+  			'name' => 'research_series_section',
+  			'type' => 'group',
+  			'instructions' => '',
+  			'required' => 0,
+  			'conditional_logic' => 0,
+  			'wrapper' => array (
+  				'width' => '',
+  				'class' => '',
+  				'id' => '',
+  			),
+  			'layout' => 'row',
+  			'sub_fields' => array (
+  				array (
+  					'key' => 'field_section_title',
+  					'label' => __( 'Title', 'pai-core' ),
+  					'name' => 'section_title',
+  					'type' => 'text',
+  					'instructions' => '',
+  					'required' => 0,
+  					'conditional_logic' => 0,
+  					'wrapper' => array (
+  						'width' => '',
+  						'class' => '',
+  						'id' => '',
+  					),
+  					'default_value' => '',
+  					'placeholder' => '',
+  					'prepend' => '',
+  					'append' => '',
+  					'maxlength' => '',
+  				),
+  				array (
+  					'key' => 'field_section_description',
+  					'label' => __( 'Description', 'pai-core' ),
+  					'name' => 'section_description',
+  					'type' => 'wysiwyg',
+  					'instructions' => '',
+  					'required' => 0,
+  					'conditional_logic' => 0,
+  					'wrapper' => array (
+  						'width' => '',
+  						'class' => '',
+  						'id' => '',
+  					),
+  					'default_value' => '',
+  					'tabs' => 'all',
+  					'toolbar' => 'basic',
+  					'media_upload' => 0,
+  					'delay' => 0,
+  				),
+  			),
+  		),
+  		array (
+  			'key' => 'field_reports_section',
+  			'label' => __( 'Research Reports Section', 'pai-core' ),
+  			'name' => 'research_reports_section',
+  			'type' => 'group',
+  			'instructions' => '',
+  			'required' => 0,
+  			'conditional_logic' => 0,
+  			'wrapper' => array (
+  				'width' => '',
+  				'class' => '',
+  				'id' => '',
+  			),
+  			'layout' => 'row',
+  			'sub_fields' => array (
+  				array (
+  					'key' => 'field_section_title',
+  					'label' => __( 'Title', 'pai-core' ),
+  					'name' => 'section_title',
+  					'type' => 'text',
+  					'instructions' => '',
+  					'required' => 0,
+  					'conditional_logic' => 0,
+  					'wrapper' => array (
+  						'width' => '',
+  						'class' => '',
+  						'id' => '',
+  					),
+  					'default_value' => '',
+  					'placeholder' => '',
+  					'prepend' => '',
+  					'append' => '',
+  					'maxlength' => '',
+  				),
+  				array (
+  					'key' => 'field_section_description',
+  					'label' => __( 'Description', 'pai-core' ),
+  					'name' => 'section_description',
+  					'type' => 'wysiwyg',
+  					'instructions' => '',
+  					'required' => 0,
+  					'conditional_logic' => 0,
+  					'wrapper' => array (
+  						'width' => '',
+  						'class' => '',
+  						'id' => '',
+  					),
+  					'default_value' => '',
+  					'tabs' => 'all',
+  					'toolbar' => 'basic',
+  					'media_upload' => 0,
+  					'delay' => 0,
+  				),
+  			),
+  		),
+  	),
+  	'location' => array (
+  		array (
+  			array (
+  				'param' => 'post_template',
+  				'operator' => '==',
+  				'value' => 'page-research.php',
+  			),
+  		),
+  	),
+  	'menu_order' => 0,
+  	'position' => 'normal',
+  	'style' => 'default',
+  	'label_placement' => 'top',
+  	'instruction_placement' => 'label',
+  	'hide_on_screen' => '',
+  	'active' => 1,
+  	'description' => '',
+  ));
+
 }
 
 /**
