@@ -581,6 +581,144 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
   	'description' => '',
   ));
 
+  /* Related Content */
+  acf_add_local_field_group( array(
+    'key' => 'group_related_content',
+    'title' => __( 'Related Content', 'pai-core' ),
+    'fields' => array (
+      array (
+        'key' => 'field_related_content',
+        'label' => __( 'Related Content', 'pai-core' ),
+        'name' => 'related_content',
+        'type' => 'relationship',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array (
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'post_type' => array (
+          0 => 'post',
+          1 => 'report',
+        ),
+        'taxonomy' => array (
+        ),
+        'filters' => array (
+          0 => 'search',
+          1 => 'post_type',
+          2 => 'taxonomy',
+        ),
+        'elements' => array (
+          0 => 'featured_image',
+        ),
+        'min' => '',
+        'max' => 3,
+        'return_format' => 'object',
+      ),
+      array (
+        'key' => 'field_related_press',
+        'label' => __( 'Related Press', 'pai-core' ),
+        'name' => 'related_press',
+        'type' => 'relationship',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array (
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'post_type' => array (
+          0 => 'post',
+          1 => 'report',
+        ),
+        'taxonomy' => array (
+          0 => 'category:press-mention',
+        ),
+        'filters' => array (
+          0 => 'search',
+          1 => 'post_type',
+        ),
+        'elements' => array (
+          0 => 'featured_image',
+        ),
+        'min' => '',
+        'max' => 3,
+        'return_format' => 'object',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'post',
+        ),
+      ),
+      array (
+        array (
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'report',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+  ));
+
+  /* Report Fields */
+  acf_add_local_field_group(array (
+  	'key' => 'group_report_detail',
+  	'title' => __( 'Details', 'pai-core' ),
+  	'fields' => array (
+  		array (
+  			'key' => 'field_pdf_link',
+  			'label' => __( 'PDF Link', 'pai-link' ),
+  			'name' => 'pdf_link',
+  			'type' => 'file',
+  			'instructions' => '',
+  			'required' => 0,
+  			'conditional_logic' => 0,
+  			'wrapper' => array (
+  				'width' => '',
+  				'class' => '',
+  				'id' => '',
+  			),
+  			'return_format' => 'array',
+  			'library' => 'all',
+  			'min_size' => '',
+  			'max_size' => '',
+  			'mime_types' => 'pdf',
+  		),
+  	),
+  	'location' => array (
+  		array (
+  			array (
+  				'param' => 'post_type',
+  				'operator' => '==',
+  				'value' => 'report',
+  			),
+  		),
+  	),
+  	'menu_order' => 0,
+  	'position' => 'normal',
+  	'style' => 'default',
+  	'label_placement' => 'top',
+  	'instruction_placement' => 'label',
+  	'hide_on_screen' => '',
+  	'active' => 1,
+  	'description' => '',
+  ));
+
   /* Press Mention Fields */
   acf_add_local_field_group( array(
   	'key' => 'group_press_mention',
