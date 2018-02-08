@@ -53,7 +53,7 @@ function pai_core_custom_post_type() {
    'description'           => __( 'Post Type for Reports', 'pai-core' ),
    'labels'                => $labels,
    'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
-   'taxonomies'            => array( 'category', 'post_tag', 'series' ),
+   'taxonomies'            => array( 'topic', 'post_tag', 'series' ),
    'hierarchical'          => true,
    'public'                => true,
    'show_ui'               => true,
@@ -75,6 +75,54 @@ function pai_core_custom_post_type() {
 add_action( 'init', 'pai_core_custom_post_type', 99 );
 
 /**
+ * Register Custom Taxonomy
+ *
+ * @since 0.1.0
+ *
+ * @uses register_taxonomy()
+ *
+ * @return void
+ */
+function pai_core_custom_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Topics', 'Taxonomy General Name', 'pai-core' ),
+		'singular_name'              => _x( 'Topic', 'Taxonomy Singular Name', 'pai-core' ),
+		'menu_name'                  => __( 'Topics', 'pai-core' ),
+		'all_items'                  => __( 'All Topics', 'pai-core' ),
+		'parent_item'                => __( 'Parent Topic', 'pai-core' ),
+		'parent_item_colon'          => __( 'Parent Topic:', 'pai-core' ),
+		'new_item_name'              => __( 'New Topic Name', 'pai-core' ),
+		'add_new_item'               => __( 'Add New Topic', 'pai-core' ),
+		'edit_item'                  => __( 'Edit Topic', 'pai-core' ),
+		'update_item'                => __( 'Update Topic', 'pai-core' ),
+		'view_item'                  => __( 'View Topic', 'pai-core' ),
+		'separate_items_with_commas' => __( 'Separate topics with commas', 'pai-core' ),
+		'add_or_remove_items'        => __( 'Add or remove topics', 'pai-core' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'pai-core' ),
+		'popular_items'              => __( 'Popular Topics', 'pai-core' ),
+		'search_items'               => __( 'Search Topics', 'pai-core' ),
+		'not_found'                  => __( 'Not Found', 'pai-core' ),
+		'no_terms'                   => __( 'No topics', 'pai-core' ),
+		'items_list'                 => __( 'Topics list', 'pai-core' ),
+		'items_list_navigation'      => __( 'Topics list navigation', 'pai-core' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'show_in_rest'               => true,
+	);
+	register_taxonomy( 'topic', array( 'report' ), $args );
+
+}
+add_action( 'init', 'pai_core_custom_taxonomy', 0 );
+
+/**
  * Insert Category Terms
  * Upon plugin activation, insert terms if they don't already exist
  *
@@ -85,9 +133,9 @@ add_action( 'init', 'pai_core_custom_post_type', 99 );
 
 function pai_core_insert_terms() {
 
-  if( !term_exists( 'Press Release', 'category' ) ) {
+  if( !term_exists( 'Press Releases', 'category' ) ) {
     wp_insert_term(
-      __( 'Press Release', 'pai-core' ),
+      __( 'Press Releases', 'pai-core' ),
       'category',
       array(
         'description'=> __( 'Press release posts.', 'pai-core' ),
@@ -96,9 +144,9 @@ function pai_core_insert_terms() {
     );
   }
 
-  if( !term_exists( 'Press Mention', 'category' ) ) {
+  if( !term_exists( 'Press Mentions', 'category' ) ) {
     wp_insert_term(
-      __( 'Press Mention', 'pai-core' ),
+      __( 'Press Mentions', 'pai-core' ),
       'category',
       array(
         'description'=> __( 'Press mention posts.', 'pai-core' ),
@@ -107,9 +155,9 @@ function pai_core_insert_terms() {
     );
   }
 
-  if( !term_exists( 'Job', 'category' ) ) {
+  if( !term_exists( 'Jobs', 'category' ) ) {
     wp_insert_term(
-      __( 'Job', 'pai-core' ),
+      __( 'Jobs', 'pai-core' ),
       'category',
       array(
         'description'=> __( 'Job posts.', 'pai-core' ),
