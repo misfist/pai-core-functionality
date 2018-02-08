@@ -845,7 +845,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
   			array (
   				'param' => 'post_template',
   				'operator' => '==',
-  				'value' => 'page-research.php',
+  				'value' => 'page-templates/page-research.php',
   			),
   		),
   	),
