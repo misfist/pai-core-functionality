@@ -3,7 +3,7 @@ Contributors: misfist
 Tags:
 Requires at least: 3.7
 Tested up to: 4.8.2
-Version: 0.1.0
+Version: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ e.g.
 
 
 == Changelog ==
+
+= 0.1.1 =
+Added new custom `url` field for project category
 
 = 0.1.0 =
 Initial

@@ -675,6 +675,47 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
     'description' => '',
   ));
 
+  /* Project Category Fields */
+  acf_add_local_field_group( array(
+    'key' => 'group_projects',
+    'title' => 'Projects',
+    'fields' => array(
+    array(
+    	'key' => 'field_url',
+    	'label' => __( 'URL', 'pai-core' ),
+    	'name' => 'url',
+    	'type' => 'url',
+    	'instructions' => __( 'Enter project URL', 'pai-core' ),
+    	'required' => 0,
+    	'conditional_logic' => 0,
+    	'wrapper' => array(
+    		'width' => '',
+    		'class' => '',
+    		'id' => '',
+    	),
+    	'default_value' => '',
+    	'placeholder' => 'https://littlesis.org',
+    ),
+    ),
+    'location' => array(
+    array(
+    	array(
+    		'param' => 'post_category',
+    		'operator' => '==',
+    		'value' => 'category:projects',
+    	),
+    ),
+    ),
+    'menu_order' => 0,
+    'position' => 'acf_after_title',
+    'style' => 'seamless',
+    'label_placement' => 'top',
+    'instruction_placement' => 'field',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+    ));
+
   /* Report Fields */
   acf_add_local_field_group(array (
   	'key' => 'group_report_detail',
