@@ -25,6 +25,10 @@ e.g.
 
 == Changelog ==
 
+= 0.1.5 =
+* Changed `load_terms` option to false for select lists.
+* Changed `post_type` option to allow multiple and accept none.
+
 = 0.1.3 =
 Added new custom `secondary-content` field for default pages.
 
