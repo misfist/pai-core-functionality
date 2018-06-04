@@ -7,7 +7,7 @@
  * Author URI:      https://github.com/misfist
  * Text Domain:     pai-core
  * Domain Path:     /languages
- * Version:         0.1.5
+ * Version:         0.1.6
  *
  * @package         PAI_Core_Functionality
  */

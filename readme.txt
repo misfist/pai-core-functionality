@@ -2,8 +2,8 @@
 Contributors: misfist
 Tags:
 Requires at least: 3.7
-Tested up to: 4.8.2
-Version: 0.1.3
+Tested up to: 4.9.6
+Version: 0.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ e.g.
 
 
 == Changelog ==
+
+= 0.1.6 =
+* Changed project function fields to appear for category `projects` or `project`
 
 = 0.1.5 =
 * Changed `load_terms` option to false for select lists.

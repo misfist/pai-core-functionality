@@ -698,14 +698,21 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
     ),
     ),
     'location' => array(
-    array(
-    	array(
-    		'param' => 'post_category',
-    		'operator' => '==',
-    		'value' => 'category:projects',
-    	),
-    ),
-    ),
+  		array(
+  			array(
+  				'param' => 'post_category',
+  				'operator' => '==',
+  				'value' => 'category:project',
+  			),
+  		),
+  		array(
+  			array(
+  				'param' => 'post_category',
+  				'operator' => '==',
+  				'value' => 'category:projects',
+  			),
+  		),
+  	),
     'menu_order' => 0,
     'position' => 'acf_after_title',
     'style' => 'seamless',
