@@ -787,9 +787,9 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
       'location' => array(
     		array(
     			array(
-    				'param' => 'post_template',
+    				'param' => 'post_type',
     				'operator' => '==',
-    				'value' => 'default',
+    				'value' => 'page',
     			),
     		),
     	),
