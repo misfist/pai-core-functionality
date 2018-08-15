@@ -549,7 +549,33 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
   									'ui_on_text' => '',
   									'ui_off_text' => '',
   								),
-
+                  array(
+                    'key' => 'field_display_block_link',
+                    'label' => __( 'Display Block Link', 'pai-core' ),
+                    'name' => 'display_block_link',
+                    'type' => 'true_false',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array (
+                      array (
+                        array (
+                          'field' => 'field_section_type',
+                          'operator' => '==',
+                          'value' => 'manual',
+                        ),
+                      ),
+                    ),
+                    'wrapper' => array(
+                      'width' => '',
+                      'class' => '',
+                      'id' => '',
+                    ),
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => '',
+                    'ui_off_text' => '',
+                  ),
   							),
   							'min' => '',
   							'max' => '',
