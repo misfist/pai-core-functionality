@@ -52,7 +52,7 @@ function pai_core_custom_post_type() {
    'label'                 => __( 'Report', 'pai-core' ),
    'description'           => __( 'Post Type for Reports', 'pai-core' ),
    'labels'                => $labels,
-   'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author' ),
+   'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author', 'revisions' ),
    'taxonomies'            => array( 'topic', 'post_tag', 'series' ),
    'hierarchical'          => true,
    'public'                => true,
