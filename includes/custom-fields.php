@@ -641,7 +641,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
         ),
         'min' => '',
         'max' => 3,
-        'return_format' => 'object',
+        'return_format' => 'id',
       ),
       array (
         'key' => 'field_related_press',
@@ -658,21 +658,19 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
         ),
         'post_type' => array (
           0 => 'post',
-          1 => 'report',
         ),
         'taxonomy' => array (
           0 => 'category:press-mention',
         ),
         'filters' => array (
           0 => 'search',
-          1 => 'post_type',
         ),
         'elements' => array (
           0 => 'featured_image',
         ),
         'min' => '',
         'max' => 3,
-        'return_format' => 'object',
+        'return_format' => 'id',
       ),
     ),
     'location' => array (
