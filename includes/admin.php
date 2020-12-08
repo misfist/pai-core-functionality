@@ -8,5 +8,5 @@
  * @license    GPL-2.0+
  */
 
-$admin_role = get_role( 'admin' );
+$admin_role = get_role( 'administrator' );
 $admin_role->add_cap( 'unfiltered_upload' );
